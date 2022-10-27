@@ -1,0 +1,6 @@
+<launch>
+    <arg name="side_type" default="client"/>
+    <arg name="comm_type" default="websocket"/>
+    <arg name="tum_name" default="TUM2"/>
+    <node name="edge" pkg="Edge_SLAM" type="RGBD" args="/workspace/edgeslam/Vocabulary/ORBvoc.txt /workspace/edgeslam/Examples/RGB-D/$(arg tum_name).yaml client websocket" output="screen" />
+</launch>
