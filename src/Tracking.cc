@@ -593,9 +593,9 @@ Tracking::Tracking(System *pSys, ORBVocabulary* pVoc, FrameDrawer *pFrameDrawer,
     // Kubeedge
     if(strCommProtocol == "websocket")
     {
-        string start_flag, connection_flag;
-        cout << "Start client(input any key): ";
-        getline(cin, start_flag);
+        // string start_flag, connection_flag;
+        // cout << "Start client(input any key): ";
+        // getline(cin, start_flag);
         keyframes_id = m_wsendpoint.connect("ws://orbslam-cloud:9002/");
         if (keyframes_id != -1) {
             std::cout << "> Created KFs & Maps connection with id " << keyframes_id << std::endl;
@@ -620,8 +620,8 @@ Tracking::Tracking(System *pSys, ORBVocabulary* pVoc, FrameDrawer *pFrameDrawer,
             std::cout << "Error occured while connecting Maps to cloud!" << std::endl;
         }
 
-        cout << "Start SLAM! (make sure server side connect successfully, and input any key): ";
-        getline(cin, connection_flag);
+        // cout << "Start SLAM! (make sure server side connect successfully, and input any key): ";
+        // getline(cin, connection_flag);
         
         keyframe_thread = new thread(&ORB_SLAM2::websocket_endpoint::send, &m_wsendpoint, keyframes_id, std::ref(keyframe_queue));
         frame_thread = new thread(&ORB_SLAM2::websocket_endpoint::send, &m_wsendpoint, frames_id, std::ref(frame_queue));

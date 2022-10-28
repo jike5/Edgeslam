@@ -238,9 +238,9 @@ LocalMapping::LocalMapping(Map *pMap, KeyFrameDatabase* pKFDB, ORBVocabulary* pV
     // Kubeedge
     if(strCommProtocol == "websocket")
     {
-        string start_flag, connection_flag;
-        cout << "Start server(input any key): ";
-        getline(cin, start_flag);
+        // string start_flag, connection_flag;
+        // cout << "Start server(input any key): ";
+        // getline(cin, start_flag);
         mp_keyframes_server = new utility_server(9002, &keyframe_queue, 2);
         std::cout << "Start listen on 9002 for KeyFrames!" << std::endl;
        
